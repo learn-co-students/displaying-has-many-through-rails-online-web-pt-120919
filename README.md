@@ -117,7 +117,7 @@ end
 Notice that we can't just declare that our `User` `has_many :posts` because our `posts` table doesn't have a foreign key called `user_id`. Instead, we tell Active Record to look through the `comments` table to figure out this association by declaring that our `User` `has_many :posts, through: :comments`. Now, instances of our `User` model respond to a method called `posts`. This will return a collection of posts that share a comment with the user.
 
 ### Displaying Comments on Our Posts
-
+ 
 Now that our association is set up, let's display some data. First, let's set up our `Post#show` page to display all of the comments on a particular post. We'll include the username of the user who created the comment as well as a link to their show page.
 
 In `app/controllers/posts_controller.rb`, define a `show` action that finds a particular post to make it available for display.
